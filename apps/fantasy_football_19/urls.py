@@ -4,4 +4,5 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^matchups$', views.matchups),
     url(r'^teams$', views.teams),
+    url(r'^rosters$', views.rosters),
 ]

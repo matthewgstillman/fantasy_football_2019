@@ -15,16 +15,26 @@
     <script src="" async defer></script>
     <h1>Fantasy Football Teams</h1>
     <div class="container">
-        <h6>{{data.0}}</h6>
-        <h6>League Name: {{data.0.settings}}</h6>
-        <h6>Teams/Owners: {{data.0.teams}}</h6>
-        <h6>Owners: {{data.0.teams}}</h6>
-        {% for item in data.0.teams %}
-        <h5>Teams</h5>
+        <h1 align="center">{{data.0.settings.name}}</h1>
+        <!--<h6>Teams/Owners: {{data.0.teams}}</h6>
+        <h6>Owners: {{data.0.teams}}</h6>-->
+        <br> {% for item in data.0.members %}
         <h6>{{item}}</h6>
-
-        {% endfor %}
-        <h6>{{data}}</h6>
+        <!--<h6>Is League Manager: {{item.isLeagueManager}}</h6>-->
+        <br>
+        <h6>Display Name: {{item.displayName}}</h6>
+        <h6>ID: {{item.id}}</h6>
+        <br> {% endfor %}
+        <br>
+        <h5>Teams</h5>
+        {% for item in data.0.teams %}
+        <br>
+        <!--<h6>{{item}}</h6>-->
+        <h3>{{item.location}} {{item.nickname}}</h3>
+        <h6>Team Abbreviation: {{item.abbrev}}</h6>
+        <h6>Team: {{item.location}} {{item.nickname}}</h6>
+        <h6>Database Name: {{item.owners.0}}</h6>
+        <br> {% endfor %}
     </div>
 </body>
 
