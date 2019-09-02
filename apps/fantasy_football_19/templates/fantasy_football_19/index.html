@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fantasy Football 2019</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+
+</head>
+
+<body>
+    <script src="" async defer></script>
+    <h1>Fantasy Football</h1>
+    <div class="container">
+        <h1>Fantasy Football 2019</h1>
+        <h5>Season: {{data.seasonId}}</h5>
+        <h5>Status: {{data.status}}</h5>
+        <h5>Latest Scoring Period: {{data.status.latestScoringPeriod}}</h5>
+        <h5>Current Matchup Period: {{data.status.currentMatchupPeriod}}</h5>
+        <h5>Is Active: {{data.status.isActive}}</h5>
+        <h5>Game: {{data.gameId}}</h5>
+        <h5>Game Segment: {{data.segmentId}}</h5>
+        <h5>Settings: {{data.settings}}</h5>
+        <h5>League Name: {{data.settings.name}}</h5>
+        <h5>Teams: {{data.teams}}</h5>
+        <h5>Owners: {{data.teams.0}}</h5>
+        <h6>{{data}}</h6>
+    </div>
+</body>
+
+</html>
