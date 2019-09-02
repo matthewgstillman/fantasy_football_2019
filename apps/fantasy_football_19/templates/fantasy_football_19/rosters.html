@@ -15,7 +15,258 @@
     <script src="" async defer></script>
     <h1>Fantasy Football Rosters</h1>
     <div class="container">
-        <h6>{{data}}</h6>
+        <h1>Round 1</h1>
+        <h2>Season: {{data.seasonId}}</h2>
+        <h6>Season Status: {{data.status}}</h6>
+        <h6>Game ID: {{data.gameId}}</h6>
+        <h6>Segment ID: {{data.segmentId}}</h6>
+        <h6>League ID: {{data.id}}</h6>
+        <h5>Teams</h5>
+        {% for item in data.teams %}
+        <br>
+        <h6>Team ID: {{item.id}}</h6>
+        <h6>Applied Stat Total: {{item.roster.appliedStatTotal}}</h6>
+        <h6>Status: {{item.roster.entries.0.status}}</h6>
+        <h6>Acquisition Type: {{item.roster.entries.0.acquisitionType}}</h6>
+        <h6>Acquisition Date: {{item.roster.entries.0.acquisitionDate}}</h6>
+        <h6>Player ID: {{item.roster.entries.0.playerId}}</h6>
+        <h6>Pending Transaction IDs: {{item.roster.entries.0.pendingTransactionIds}}</h6>
+        <h6>Status: {{item.roster.entries.0.status}}</h6>
+        <h1>{{item.roster.entries.0.playerPoolEntry.player.firstName}} {{item.roster.entries.0.playerPoolEntry.player.lastName}}</h1>
+        <h3>Ratings</h3>
+        <h6>Total Ranking: {{item.roster.entries.0.playerPoolEntry.ratings.0.totalRanking}}</h6>
+        <h6>Positional Ranking: {{item.roster.entries.0.playerPoolEntry.ratings.0.positionalRanking}}</h6>
+        <h6>Forecasted Points: {{item.roster.entries.0.playerPoolEntry.ratings.0.totalRating}}</h6>
+        <h6>Lineup Locked: {{item.roster.entries.0.playerPoolEntry.lineupLocked}}</h6>
+        <br>
+        <h6>Injured: {{item.roster.entries.0.playerPoolEntry.player.injured}}</h6>
+        <h6>Injured: {{item.roster.entries.0.playerPoolEntry.player.injuryStatus}}</h6>
+        <h6>Default Position ID: {{item.roster.entries.0.playerPoolEntry.player.defaultPositionId}}</h6>
+        <br>
+        <h4>Rankings</h4>
+        <h6>Rank: {{item.roster.entries.0.playerPoolEntry.player.rankings.1.0.rank}}</h6>
+        <h6>Rank Type: {{item.roster.entries.0.playerPoolEntry.player.rankings.1.0.rankType}}</h6>
+        <h6>Droppable: {{item.roster.entries.0.playerPoolEntry.player.droppable}}</h6>
+        <h6>Season Outlook: {{item.roster.entries.0.playerPoolEntry.player.seasonOutlook}}</h6>
+        <br> {% endfor %}
+    </div>
+    <br>
+    <div class="container">
+        <h1>Round 2</h1>
+        <h2>Season: {{data.seasonId}}</h2>
+        <h6>Season Status: {{data.status}}</h6>
+        <h6>Game ID: {{data.gameId}}</h6>
+        <h6>Segment ID: {{data.segmentId}}</h6>
+        <h6>League ID: {{data.id}}</h6>
+        <h5>Teams</h5>
+        {% for item in data.teams %}
+        <br>
+        <h6>Team ID: {{item.id}}</h6>
+        <h6>Applied Stat Total: {{item.roster.appliedStatTotal}}</h6>
+        <h6>Status: {{item.roster.entries.0.status}}</h6>
+        <h6>Acquisition Type: {{item.roster.entries.1.acquisitionType}}</h6>
+        <h6>Acquisition Date: {{item.roster.entries.1.acquisitionDate}}</h6>
+        <h6>Player ID: {{item.roster.entries.1.playerId}}</h6>
+        <h6>Pending Transaction IDs: {{item.roster.entries.1.pendingTransactionIds}}</h6>
+        <h6>Status: {{item.roster.entries.1.status}}</h6>
+        <h1>{{item.roster.entries.1.playerPoolEntry.player.firstName}} {{item.roster.entries.1.playerPoolEntry.player.lastName}}</h1>
+        <h3>Ratings</h3>
+        <h6>Total Ranking: {{item.roster.entries.1.playerPoolEntry.ratings.0.totalRanking}}</h6>
+        <h6>Positional Ranking: {{item.roster.entries.1.playerPoolEntry.ratings.0.positionalRanking}}</h6>
+        <h6>Forecasted Points: {{item.roster.entries.1.playerPoolEntry.ratings.0.totalRating}}</h6>
+        <h6>Lineup Locked: {{item.roster.entries.1.playerPoolEntry.lineupLocked}}</h6>
+        <br>
+        <h6>Injured: {{item.roster.entries.1.playerPoolEntry.player.injured}}</h6>
+        <h6>Injured: {{item.roster.entries.1.playerPoolEntry.player.injuryStatus}}</h6>
+        <h6>Default Position ID: {{item.roster.entries.1.playerPoolEntry.player.defaultPositionId}}</h6>
+        <br>
+        <h4>Rankings</h4>
+        <h6>Rank: {{item.roster.entries.1.playerPoolEntry.player.rankings.1.0.rank}}</h6>
+        <h6>Rank Type: {{item.roster.entries.1.playerPoolEntry.player.rankings.1.0.rankType}}</h6>
+        <h6>Droppable: {{item.roster.entries.1.playerPoolEntry.player.droppable}}</h6>
+        <h6>Season Outlook: {{item.roster.entries.1.playerPoolEntry.player.seasonOutlook}}</h6>
+        <br> {% endfor %}
+    </div>
+    <br>
+    <div class="container">
+        <h1>Round 3</h1>
+        <h2>Season: {{data.seasonId}}</h2>
+        <h6>Season Status: {{data.status}}</h6>
+        <h6>Game ID: {{data.gameId}}</h6>
+        <h6>Segment ID: {{data.segmentId}}</h6>
+        <h6>League ID: {{data.id}}</h6>
+        <h5>Teams</h5>
+        {% for item in data.teams %}
+        <br>
+        <h6>Team ID: {{item.id}}</h6>
+        <h6>Applied Stat Total: {{item.roster.appliedStatTotal}}</h6>
+        <h6>Status: {{item.roster.entries.0.status}}</h6>
+        <h6>Acquisition Type: {{item.roster.entries.2.acquisitionType}}</h6>
+        <h6>Acquisition Date: {{item.roster.entries.2.acquisitionDate}}</h6>
+        <h6>Player ID: {{item.roster.entries.2.playerId}}</h6>
+        <h6>Pending Transaction IDs: {{item.roster.entries.2.pendingTransactionIds}}</h6>
+        <h6>Status: {{item.roster.entries.2.status}}</h6>
+        <h1>{{item.roster.entries.2.playerPoolEntry.player.firstName}} {{item.roster.entries.2.playerPoolEntry.player.lastName}}</h1>
+        <h3>Ratings</h3>
+        <h6>Total Ranking: {{item.roster.entries.2.playerPoolEntry.ratings.0.totalRanking}}</h6>
+        <h6>Positional Ranking: {{item.roster.entries.2.playerPoolEntry.ratings.0.positionalRanking}}</h6>
+        <h6>Forecasted Points: {{item.roster.entries.2.playerPoolEntry.ratings.0.totalRating}}</h6>
+        <h6>Lineup Locked: {{item.roster.entries.2.playerPoolEntry.lineupLocked}}</h6>
+        <br>
+        <h6>Injured: {{item.roster.entries.2.playerPoolEntry.player.injured}}</h6>
+        <h6>Injured: {{item.roster.entries.2.playerPoolEntry.player.injuryStatus}}</h6>
+        <h6>Default Position ID: {{item.roster.entries.2.playerPoolEntry.player.defaultPositionId}}</h6>
+        <br>
+        <h4>Rankings</h4>
+        <h6>Rank: {{item.roster.entries.2.playerPoolEntry.player.rankings.1.0.rank}}</h6>
+        <h6>Rank Type: {{item.roster.entries.2.playerPoolEntry.player.rankings.1.0.rankType}}</h6>
+        <h6>Droppable: {{item.roster.entries.2.playerPoolEntry.player.droppable}}</h6>
+        <h6>Season Outlook: {{item.roster.entries.2.playerPoolEntry.player.seasonOutlook}}</h6>
+        <br> {% endfor %}
+    </div>
+    <div class="container">
+        <h1>Round 4</h1>
+        <h2>Season: {{data.seasonId}}</h2>
+        <h6>Season Status: {{data.status}}</h6>
+        <h6>Game ID: {{data.gameId}}</h6>
+        <h6>Segment ID: {{data.segmentId}}</h6>
+        <h6>League ID: {{data.id}}</h6>
+        <h5>Teams</h5>
+        {% for item in data.teams %}
+        <br>
+        <h6>Team ID: {{item.id}}</h6>
+        <h6>Applied Stat Total: {{item.roster.appliedStatTotal}}</h6>
+        <h6>Status: {{item.roster.entries.0.status}}</h6>
+        <h6>Acquisition Type: {{item.roster.entries.3.acquisitionType}}</h6>
+        <h6>Acquisition Date: {{item.roster.entries.3.acquisitionDate}}</h6>
+        <h6>Player ID: {{item.roster.entries.3.playerId}}</h6>
+        <h6>Pending Transaction IDs: {{item.roster.entries.3.pendingTransactionIds}}</h6>
+        <h6>Status: {{item.roster.entries.3.status}}</h6>
+        <h1>{{item.roster.entries.3.playerPoolEntry.player.firstName}} {{item.roster.entries.3.playerPoolEntry.player.lastName}}</h1>
+        <h3>Ratings</h3>
+        <h6>Total Ranking: {{item.roster.entries.3.playerPoolEntry.ratings.0.totalRanking}}</h6>
+        <h6>Positional Ranking: {{item.roster.entries.3.playerPoolEntry.ratings.0.positionalRanking}}</h6>
+        <h6>Forecasted Points: {{item.roster.entries.3.playerPoolEntry.ratings.0.totalRating}}</h6>
+        <h6>Lineup Locked: {{item.roster.entries.3.playerPoolEntry.lineupLocked}}</h6>
+        <br>
+        <h6>Injured: {{item.roster.entries.3.playerPoolEntry.player.injured}}</h6>
+        <h6>Injured: {{item.roster.entries.3.playerPoolEntry.player.injuryStatus}}</h6>
+        <h6>Default Position ID: {{item.roster.entries.3.playerPoolEntry.player.defaultPositionId}}</h6>
+        <br>
+        <h4>Rankings</h4>
+        <h6>Rank: {{item.roster.entries.3.playerPoolEntry.player.rankings.1.0.rank}}</h6>
+        <h6>Rank Type: {{item.roster.entries.3.playerPoolEntry.player.rankings.1.0.rankType}}</h6>
+        <h6>Droppable: {{item.roster.entries.3.playerPoolEntry.player.droppable}}</h6>
+        <h6>Season Outlook: {{item.roster.entries.3.playerPoolEntry.player.seasonOutlook}}</h6>
+        <br> {% endfor %}
+    </div>
+    <div class="container">
+        <h1>Round 5</h1>
+        <h2>Season: {{data.seasonId}}</h2>
+        <h6>Season Status: {{data.status}}</h6>
+        <h6>Game ID: {{data.gameId}}</h6>
+        <h6>Segment ID: {{data.segmentId}}</h6>
+        <h6>League ID: {{data.id}}</h6>
+        <h5>Teams</h5>
+        {% for item in data.teams %}
+        <br>
+        <h6>Team ID: {{item.id}}</h6>
+        <h6>Applied Stat Total: {{item.roster.appliedStatTotal}}</h6>
+        <h6>Status: {{item.roster.entries.0.status}}</h6>
+        <h6>Acquisition Type: {{item.roster.entries.4.acquisitionType}}</h6>
+        <h6>Acquisition Date: {{item.roster.entries.4.acquisitionDate}}</h6>
+        <h6>Player ID: {{item.roster.entries.4.playerId}}</h6>
+        <h6>Pending Transaction IDs: {{item.roster.entries.4.pendingTransactionIds}}</h6>
+        <h6>Status: {{item.roster.entries.4.status}}</h6>
+        <h1>{{item.roster.entries.4.playerPoolEntry.player.firstName}} {{item.roster.entries.4.playerPoolEntry.player.lastName}}</h1>
+        <h3>Ratings</h3>
+        <h6>Total Ranking: {{item.roster.entries.4.playerPoolEntry.ratings.0.totalRanking}}</h6>
+        <h6>Positional Ranking: {{item.roster.entries.4.playerPoolEntry.ratings.0.positionalRanking}}</h6>
+        <h6>Forecasted Points: {{item.roster.entries.4.playerPoolEntry.ratings.0.totalRating}}</h6>
+        <h6>Lineup Locked: {{item.roster.entries.4.playerPoolEntry.lineupLocked}}</h6>
+        <br>
+        <h6>Injured: {{item.roster.entries.4.playerPoolEntry.player.injured}}</h6>
+        <h6>Injured: {{item.roster.entries.4.playerPoolEntry.player.injuryStatus}}</h6>
+        <h6>Default Position ID: {{item.roster.entries.4.playerPoolEntry.player.defaultPositionId}}</h6>
+        <br>
+        <h4>Rankings</h4>
+        <h6>Rank: {{item.roster.entries.4.playerPoolEntry.player.rankings.1.0.rank}}</h6>
+        <h6>Rank Type: {{item.roster.entries.4.playerPoolEntry.player.rankings.1.0.rankType}}</h6>
+        <h6>Droppable: {{item.roster.entries.4.playerPoolEntry.player.droppable}}</h6>
+        <h6>Season Outlook: {{item.roster.entries.4.playerPoolEntry.player.seasonOutlook}}</h6>
+        <br> {% endfor %}
+    </div>
+    <div class="container">
+        <h1>Round 6</h1>
+        <h2>Season: {{data.seasonId}}</h2>
+        <h6>Season Status: {{data.status}}</h6>
+        <h6>Game ID: {{data.gameId}}</h6>
+        <h6>Segment ID: {{data.segmentId}}</h6>
+        <h6>League ID: {{data.id}}</h6>
+        <h5>Teams</h5>
+        {% for item in data.teams %}
+        <br>
+        <h6>Team ID: {{item.id}}</h6>
+        <h6>Applied Stat Total: {{item.roster.appliedStatTotal}}</h6>
+        <h6>Status: {{item.roster.entries.0.status}}</h6>
+        <h6>Acquisition Type: {{item.roster.entries.5.acquisitionType}}</h6>
+        <h6>Acquisition Date: {{item.roster.entries.5.acquisitionDate}}</h6>
+        <h6>Player ID: {{item.roster.entries.5.playerId}}</h6>
+        <h6>Pending Transaction IDs: {{item.roster.entries.5.pendingTransactionIds}}</h6>
+        <h6>Status: {{item.roster.entries.5.status}}</h6>
+        <h1>{{item.roster.entries.5.playerPoolEntry.player.firstName}} {{item.roster.entries.5.playerPoolEntry.player.lastName}}</h1>
+        <h3>Ratings</h3>
+        <h6>Total Ranking: {{item.roster.entries.5.playerPoolEntry.ratings.0.totalRanking}}</h6>
+        <h6>Positional Ranking: {{item.roster.entries.5.playerPoolEntry.ratings.0.positionalRanking}}</h6>
+        <h6>Forecasted Points: {{item.roster.entries.5.playerPoolEntry.ratings.0.totalRating}}</h6>
+        <h6>Lineup Locked: {{item.roster.entries.5.playerPoolEntry.lineupLocked}}</h6>
+        <br>
+        <h6>Injured: {{item.roster.entries.5.playerPoolEntry.player.injured}}</h6>
+        <h6>Injured: {{item.roster.entries.5.playerPoolEntry.player.injuryStatus}}</h6>
+        <h6>Default Position ID: {{item.roster.entries.5.playerPoolEntry.player.defaultPositionId}}</h6>
+        <br>
+        <h4>Rankings</h4>
+        <h6>Rank: {{item.roster.entries.5.playerPoolEntry.player.rankings.1.0.rank}}</h6>
+        <h6>Rank Type: {{item.roster.entries.5.playerPoolEntry.player.rankings.1.0.rankType}}</h6>
+        <h6>Droppable: {{item.roster.entries.5.playerPoolEntry.player.droppable}}</h6>
+        <h6>Season Outlook: {{item.roster.entries.5.playerPoolEntry.player.seasonOutlook}}</h6>
+        <br> {% endfor %}
+    </div>
+    <div class="container">
+        <h1>Round 7</h1>
+        <h2>Season: {{data.seasonId}}</h2>
+        <h6>Season Status: {{data.status}}</h6>
+        <h6>Game ID: {{data.gameId}}</h6>
+        <h6>Segment ID: {{data.segmentId}}</h6>
+        <h6>League ID: {{data.id}}</h6>
+        <h5>Teams</h5>
+        {% for item in data.teams %}
+        <br>
+        <h6>Team ID: {{item.id}}</h6>
+        <h6>Applied Stat Total: {{item.roster.appliedStatTotal}}</h6>
+        <h6>Status: {{item.roster.entries.0.status}}</h6>
+        <h6>Acquisition Type: {{item.roster.entries.6.acquisitionType}}</h6>
+        <h6>Acquisition Date: {{item.roster.entries.6.acquisitionDate}}</h6>
+        <h6>Player ID: {{item.roster.entries.6.playerId}}</h6>
+        <h6>Pending Transaction IDs: {{item.roster.entries.6.pendingTransactionIds}}</h6>
+        <h6>Status: {{item.roster.entries.6.status}}</h6>
+        <h1>{{item.roster.entries.6.playerPoolEntry.player.firstName}} {{item.roster.entries.6.playerPoolEntry.player.lastName}}</h1>
+        <h3>Ratings</h3>
+        <h6>Total Ranking: {{item.roster.entries.6.playerPoolEntry.ratings.0.totalRanking}}</h6>
+        <h6>Positional Ranking: {{item.roster.entries.6.playerPoolEntry.ratings.0.positionalRanking}}</h6>
+        <h6>Forecasted Points: {{item.roster.entries.6.playerPoolEntry.ratings.0.totalRating}}</h6>
+        <h6>Lineup Locked: {{item.roster.entries.6.playerPoolEntry.lineupLocked}}</h6>
+        <br>
+        <h6>Injured: {{item.roster.entries.6.playerPoolEntry.player.injured}}</h6>
+        <h6>Injured: {{item.roster.entries.6.playerPoolEntry.player.injuryStatus}}</h6>
+        <h6>Default Position ID: {{item.roster.entries.6.playerPoolEntry.player.defaultPositionId}}</h6>
+        <br>
+        <h4>Rankings</h4>
+        <h6>Rank: {{item.roster.entries.6.playerPoolEntry.player.rankings.1.0.rank}}</h6>
+        <h6>Rank Type: {{item.roster.entries.6.playerPoolEntry.player.rankings.1.0.rankType}}</h6>
+        <h6>Droppable: {{item.roster.entries.6.playerPoolEntry.player.droppable}}</h6>
+        <h6>Season Outlook: {{item.roster.entries.6.playerPoolEntry.player.seasonOutlook}}</h6>
+        <br> {% endfor %}
     </div>
 </body>
 
