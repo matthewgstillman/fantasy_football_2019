@@ -5,6 +5,7 @@ urlpatterns = [
     url(r'^matchups$', views.matchups),
     url(r'^teams$', views.teams),
     url(r'^league$', views.league),
+    url(r'^player_info$', views.player_info),
     url(r'^rosters$', views.rosters),
     url(r'^settings$', views.settings),
 ]

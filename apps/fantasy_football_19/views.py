@@ -164,24 +164,110 @@ def settings(request):
     data = response.json()
     print(data)
     season_id = data['seasonId']
-    print("Season ID: {}".format(season_id))
+    # print("Season ID: {}".format(season_id))
     status = data['status']
-    print("Status: {}".format(status))
+    # print("Status: {}".format(status))
     transaction_scoring_period = status['transactionScoringPeriod']
-    print("Transaction Scoring Period: {}".format(transaction_scoring_period))
+    # print("Transaction Scoring Period: {}".format(transaction_scoring_period))
     current_matchup_period = status['currentMatchupPeriod']
-    print("Current Matchup Period: {}".format(current_matchup_period))
+    # print("Current Matchup Period: {}".format(current_matchup_period))
     waiver_process_status = status['waiverProcessStatus']
-    print("Waiver Process Status: {}".format(waiver_process_status))
+    # print("Waiver Process Status: {}".format(waiver_process_status))
     previous_seasons = status['previousSeasons']
-    print("Previous Seasons: {}".format(previous_seasons))
+    # print("Previous Seasons: {}".format(previous_seasons))
     is_playoff_matchup_edited = status['isPlayoffMatchupEdited']
-    print("Is Playoff Matchup Edited: {}".format(is_playoff_matchup_edited))
+    # print("Is Playoff Matchup Edited: {}".format(is_playoff_matchup_edited))
     final_scoring_period = status['finalScoringPeriod']
-    print("Final Scoring Period: {}".format(final_scoring_period))
+    # print("Final Scoring Period: {}".format(final_scoring_period))
     current_league_type = status['currentLeagueType']
-    print("Current League Type: {}".format(current_league_type))
+    # print("Current League Type: {}".format(current_league_type))
+    waiver_last_execution_date = status['waiverLastExecutionDate']
+    # print("Waiver Last Execution Date: {}".format(waiver_last_execution_date))
+    is_waiver_order_edited = status['isWaiverOrderEdited']
+    # print("Is Waiver Order Edited: {}".format(is_waiver_order_edited))
+    standings_update_date = status['standingsUpdateDate']
+    # print("Standings Update: {}".format(standings_update_date))
+    latest_scoring_period = status['latestScoringPeriod']
+    # print("Latest Scoring Period: {}".format(latest_scoring_period))
+    teams_joined = status['teamsJoined']
+    # print("Teams Joined: {}".format(teams_joined))
+    activated_date = status['activatedDate']
+    # print("Activated Date: {}".format(activated_date))
+    is_to_be_deleted = status['isToBeDeleted']
+    # print("Is to be deleted: {}".format(is_to_be_deleted))
+    is_full = status['isFull']
+    # print("Is Full?: {}".format(is_full))
+    first_scoring_period = status['firstScoringPeriod']
+    # print("First Scoring Period: {}".format(first_scoring_period))
+    is_viewable = status['isViewable']
+    # print("Is Viewable?: {}".format(is_viewable))
+    is_expired = status['isExpired']
+    # print("Is Expired: {}".format(is_expired))
+    created_as_league_type = status['createdAsLeagueType']
+    # print("Created as league type: {}".format(created_as_league_type)
+    # )
+    is_active = status['isActive']
+    # print("Is Active?: {}".format(is_active))
     context = {
         'data': data
     }
     return render(request, 'fantasy_football_19/settings.html', context)
+
+
+def player_info(request):
+    url = 'https://fantasy.espn.com/apis/v3/games/ffl/seasons/2019/segments/0/leagues/446679?view=kona_player_info'
+    response = requests.get(url, cookies={'swid': "1001E5E2-2AE2-4AE8-A464-5B8D985F962D",
+    "espn_s2": "AEBokNq4aPr8liLBu9WPHgD0pqWtp1fiArO46aRrX%2F3139jBoyjjCjpygBuVIOwd3ITU3cJZ9qCmkJS5H%2FIYCq8gm4thQ1ehhUBEKXR7ZJSw47wsVoNmoCIkEvs6llNQKawmn%2FWnw%2Fawy%2B%2BUg1%2FygO8nCzReY5ro5AJXXRFM4t%2FInsIetIJocb1FFEoPW8OFU%2B4mxLcrxAT7jBzNsricQ%2FZbGbcI82nO4NNt8I4GuudLq1hb8xXnjNshQbBE9H79HxnmsMJxxpBytM3%2B9B74ZUGn"} )
+    data = response.json()
+    print(data)
+    players = data['players']
+    print("Players: {}".format(players))
+    for i in range(0, len(players)):
+        status = players[0]
+        print("Status: {}".format(status))
+        player_status = status['status']
+        print("Player Status: {}".format(player_status))
+        player_ratings = status['ratings']
+        print("Player Ratings: {}".format(player_ratings))
+        # player_rating_and_ranking = player_ratings[0]
+        # print("Player Rating and Ranking: {}".format(player_rating_and_ranking))
+        # player = players['player']
+        # print("Player: {}".format(player))
+        # player_first_name = player_status['player']
+        # print("Player First Name: {}".format(player_first_name))
+        lineup_locked = status['lineupLocked']
+        print("Lineup Locked: {}".format(lineup_locked))
+        draft_auction_value = status['draftAuctionValue']
+        print("Draft Auction Value: {}".format(draft_auction_value))
+        keeper_value_future = status['keeperValueFuture']
+        print("Keeper Value Future: {}".format(keeper_value_future))
+        player = status['player']
+        print("Player: {}".format(player))
+        player_injured = player['injured']
+        print("Player Injured: {}".format(player_injured))
+        player_default_position_id = player['defaultPositionId']
+        print("Player Default Position ID: {}".format(player_default_position_id))
+        player_season_outlook = player['seasonOutlook']
+        print("Player Season Outlook: {}".format(player_season_outlook))
+        player_first_name = player['firstName']
+        print("Player First Name: {}".format(player_first_name))
+        player_last_name = player['lastName']
+        print("Player Last Name: {}".format(player_last_name))
+        player_eligible_slots = player['eligibleSlots']
+        print("Player Eligible Slots: {}".format(player_eligible_slots))
+        player_droppable = player['droppable']
+        print("Player Droppable: {}".format(player_droppable))
+        player_outlooks = player['outlooks']
+        print("Player Outlooks: {}".format(player_outlooks))
+        player_outlooks_by_week = player_outlooks['outlooksByWeek']
+        print("Player Outlooks By Week: {}".format(player_outlooks_by_week))
+        # player_week_one_outlook = player_outlooks_by_week[1]
+        # print("Week 1 Outlook: {}".format(player_week_one_outlook))
+        player_ownership = player['ownership']
+        print("Player Ownership: {}".format(player_ownership))
+        percent_stared = player_ownership['percentStarted']
+        print("Percent Started: {}".format(percent_stared))
+    context = {
+        'data': data
+    }
+    return render(request, 'fantasy_football_19/player_info.html', context)
